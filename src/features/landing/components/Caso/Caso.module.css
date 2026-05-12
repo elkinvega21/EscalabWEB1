@@ -1,0 +1,129 @@
+/* Sección Caso — tarjeta de impacto con UNAC */
+.casoSection {
+  padding: 80px 48px;
+  background-color: #fff;
+}
+
+/* Tarjeta de caso de éxito */
+.casoCard {
+  background-color: #0f0f0f;
+  border-radius: var(--border-radius-lg);
+  padding: 64px;
+  display: flex;
+  gap: 64px;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Detalle decorativo verde */
+.casoCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--primary-green);
+  border-radius: 2px;
+}
+
+/* Lado izquierdo: texto */
+.casoContent {
+  flex: 1;
+}
+
+.clientName {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: var(--fw-bold);
+  color: var(--primary-green);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 28px;
+}
+
+.casoText {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 460px;
+}
+
+/* Lado derecho: imagen */
+.casoImage {
+  flex: 1;
+  max-width: 400px;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 280px;
+  background-color: rgba(181, 227, 39, 0.08);
+  border: 2px dashed rgba(181, 227, 39, 0.3);
+  border-radius: var(--border-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(181, 227, 39, 0.5);
+  font-size: var(--text-sm);
+}
+
+/* =========================================
+   Responsive
+   ========================================= */
+@media (max-width: 1024px) {
+  .casoSection {
+    padding: 64px 24px;
+  }
+
+  .casoCard {
+    flex-direction: column;
+    padding: 40px 32px;
+    gap: 32px;
+  }
+
+  .casoImage {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .casoSection {
+    padding: 48px 20px;
+  }
+
+  .casoCard {
+    padding: 32px 24px;
+    gap: 24px;
+  }
+
+  .clientName {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+  }
+
+  .casoText {
+    font-size: 1rem;
+  }
+
+  .imagePlaceholder {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .casoSection {
+    padding: 40px 16px;
+  }
+
+  .casoCard {
+    padding: 28px 20px;
+  }
+
+  .clientName {
+    font-size: 2rem;
+  }
+}

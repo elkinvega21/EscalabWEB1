@@ -1,0 +1,16 @@
+{
+  "name": "Escalab — Automatización de Ventas con IA",
+  "short_name": "Escalab",
+  "description": "Automatiza tu proceso de ventas completo con IA.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c0c0c",
+  "theme_color": "#b2f111",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

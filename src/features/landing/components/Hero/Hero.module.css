@@ -1,0 +1,156 @@
+.heroSection {
+  position: relative;
+  margin: 0;
+  height: 90vh;
+  min-height: 560px;
+  border-radius: 0 0 40px 40px;
+  overflow: hidden;
+  background-color: #141414;
+  background-image: url('/hero-bg.webp');
+  background-size: cover;
+  background-position: center top;
+}
+
+/* Degradado oscuro para máximo contraste — texto siempre legible */
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px 48px 72px;
+  /* Degradado: fuerte a la izquierda-abajo, sutil a la derecha */
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.45) 50%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
+  color: var(--light-text);
+}
+
+/* Área del contenido principal del hero */
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+  max-width: 680px;
+  padding-top: 80px;
+}
+
+/* H1 — Copy principal, Cabinet Grotesk, impacto máximo */
+.heroTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 6vw, 5.5rem); /* Responsive fluido */
+  font-weight: var(--fw-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.03em;
+  color: var(--light-text);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  margin: 0;
+}
+
+/* Segunda línea del H1 en verde — diferenciador visual */
+.heroTitleAccent {
+  color: var(--primary-green);
+  display: block;
+}
+
+/* Subtítulo — DM Sans, legible, no compite con el H1 */
+.heroSubtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--fw-regular);
+  line-height: var(--leading-relaxed);
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 480px;
+}
+
+/* Icono de flecha dentro del botón CTA */
+.arrowIcon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Botón CTA del Hero */
+.heroCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  background-color: var(--primary-green);
+  color: var(--dark-text);
+  border: none;
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(178, 241, 17, 0.3);
+}
+
+.heroCta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(178, 241, 17, 0.45);
+}
+
+/* =========================================
+   Responsive
+   ========================================= */
+@media (max-width: 1024px) {
+  .heroOverlay {
+    padding: 24px 32px 56px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    height: 100svh;
+    min-height: 580px;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .heroOverlay {
+    padding: 20px 20px 40px;
+    justify-content: space-between;
+  }
+
+  .heroContent {
+    padding-top: 20px;
+    gap: 16px;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .heroTitle {
+    font-size: clamp(2.2rem, 9vw, 3rem);
+    line-height: 1.05;
+  }
+
+  .heroSubtitle {
+    font-size: 14px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+

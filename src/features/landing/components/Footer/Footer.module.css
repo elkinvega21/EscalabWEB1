@@ -1,0 +1,39 @@
+/* Footer ultra-minimalista */
+.footer {
+  background-color: #000;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 32px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo en el footer */
+.footerLogo {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: var(--fw-bold);
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+/* Texto de ubicación y año */
+.footerMeta {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+/* =========================================
+   Responsive
+   ========================================= */
+@media (max-width: 640px) {
+  .footer {
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px;
+    text-align: center;
+  }
+}

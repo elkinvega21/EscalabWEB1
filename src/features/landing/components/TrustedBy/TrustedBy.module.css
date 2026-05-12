@@ -1,0 +1,101 @@
+.trustedSection {
+  background-color: var(--bg-card);
+  padding: 80px 20px;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: var(--fw-bold);
+  color: var(--dark-text);
+  margin-bottom: 48px;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.sliderContainer {
+  width: 100%;
+  position: relative;
+  /* Máscara de gradiente para que los bordes se desvanezcan suavemente */
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.sliderTrack {
+  display: flex;
+  width: max-content;
+  animation: scroll 35s linear infinite;
+  gap: 80px;
+  padding: 10px 0;
+}
+
+.sliderTrack:hover {
+  animation-play-state: paused;
+}
+
+.brandItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brandText {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: var(--fw-bold);
+  color: var(--dark-text);
+  opacity: 0.3;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.brandItem:hover .brandText {
+  opacity: 0.8;
+  color: var(--primary-green);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Como el array está duplicado, nos movemos la mitad exacta del track 
+       menos la mitad del gap para que el loop sea invisible */
+    transform: translateX(calc(-50% - 40px));
+  }
+}
+
+@media (max-width: 768px) {
+  .trustedSection {
+    padding: 60px 20px;
+  }
+  .title {
+    margin-bottom: 32px;
+  }
+  .sliderTrack {
+    gap: 40px;
+  }
+  .brandText {
+    font-size: 1.4rem;
+  }
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-50% - 20px));
+    }
+  }
+}

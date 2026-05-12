@@ -1,0 +1,213 @@
+.crmSection {
+  padding: 120px 24px;
+  background-color: #fcfcfc;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 6px 16px;
+  background-color: var(--primary-green);
+  color: #000;
+  border-radius: 100px;
+  margin-bottom: 24px;
+}
+
+.content h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: var(--dark-text);
+  letter-spacing: -0.02em;
+}
+
+.content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 40px;
+}
+
+.featuresList {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.featureItem {
+  display: flex;
+  gap: 20px;
+}
+
+.iconBox {
+  width: 44px;
+  height: 44px;
+  background-color: #fff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  color: var(--primary-green);
+  flex-shrink: 0;
+}
+
+.featureItem h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.featureItem p {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--dark-text);
+  color: #fff;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 100px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ctaBtn:hover {
+  background-color: #000;
+  transform: translateX(5px);
+}
+
+/* Visual Mockup */
+.visual {
+  position: relative;
+}
+
+.crmMockup {
+  background-color: #fff;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.mockupHeader {
+  background-color: #f8f9fa;
+  padding: 12px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ddd;
+}
+
+.mockupTitle {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.4);
+  margin-left: 10px;
+}
+
+.kanban {
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  background-color: #fcfcfc;
+}
+
+.column h5 {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.4);
+  margin-bottom: 16px;
+}
+
+.kanbanCard {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardName {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cardTag {
+  font-size: 10px;
+  background-color: #f0fdf4;
+  color: #16a34a;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.cardScore {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary-green);
+}
+
+.floatingLogos {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  display: flex;
+  gap: 10px;
+}
+
+.logoCircle {
+  width: 48px;
+  height: 48px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  font-weight: 800;
+  font-size: 18px;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}

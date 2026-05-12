@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- =============================================
+         Meta Base
+         ============================================= -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Canonical URL (actualizar con el dominio real en producción) -->
+    <link rel="canonical" href="https://escalab.co/" />
+
+    <!-- Favicon & Manifest -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#b2f111" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- =============================================
+         SEO Principal
+         ============================================= -->
+    <title>Escalab — Vende más. Sin contratar más.</title>
+    <meta
+      name="description"
+      content="Escalab automatiza tu proceso de ventas completo con IA — desde el primer mensaje hasta el cierre. Más conversiones, menos fricción."
+    />
+    <meta name="keywords" content="automatización de ventas, inteligencia artificial, CRM IA, ventas LATAM, Escalab" />
+    <meta name="author" content="Escalab" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- =============================================
+         Open Graph (Facebook, LinkedIn, WhatsApp)
+         ============================================= -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Escalab" />
+    <meta property="og:title" content="Escalab — Vende más. Sin contratar más." />
+    <meta
+      property="og:description"
+      content="Escalab automatiza tu proceso de ventas completo con IA — desde el primer mensaje hasta el cierre."
+    />
+    <meta property="og:url" content="https://escalab.co/" />
+    <meta property="og:image" content="https://escalab.co/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_CO" />
+
+    <!-- =============================================
+         Twitter Card
+         ============================================= -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@escalab" />
+    <meta name="twitter:title" content="Escalab — Vende más. Sin contratar más." />
+    <meta
+      name="twitter:description"
+      content="Automatiza tu proceso de ventas completo con IA. Más conversiones, menos fricción."
+    />
+    <meta name="twitter:image" content="https://escalab.co/og-image.png" />
+
+    <!-- =============================================
+         Schema.org — SoftwareApplication (JSON-LD)
+         Google lo usa para Rich Results y Brand SEO
+         ============================================= -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Escalab",
+      "url": "https://escalab.co",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Automatiza tu proceso de ventas completo con IA. Calificación de leads, CRM y marketing automatizado.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "120"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Escalab",
+      "url": "https://escalab.co",
+      "logo": "https://escalab.co/logo.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/escalab",
+        "https://twitter.com/escalab"
+      ]
+    }
+    </script>
+
+    <!-- =============================================
+         Performance: Preconnect a dominios de fuentes
+         ============================================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin />
+    
+    <!-- Preload del background del Hero para evitar FOUC/parpadeo -->
+    <link rel="preload" href="/hero-bg.webp" as="image" type="image/webp" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
