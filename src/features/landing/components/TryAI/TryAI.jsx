@@ -20,6 +20,12 @@ const TryAI = ({ onLeadCaptured }) => {
 
   const sessionId = getSessionId();
 
+  const WELCOME_MSG = {
+    id: 'welcome',
+    text: '¡Hola! Soy la IA de Escalab. Estoy aquí para mostrarte cómo puedo calificar leads automáticamente y agendar reuniones. ¿Qué te gustaría saber sobre nuestra plataforma?',
+    sender: 'ai'
+  };
+
   // Cargar historial al montar el componente
   useEffect(() => {
     const fetchMessages = async () => {
@@ -29,9 +35,15 @@ const TryAI = ({ onLeadCaptured }) => {
         });
         if (!response.ok) throw new Error('Error en el servidor');
         const data = await response.json();
-        setMessages(data);
+        
+        if (data && data.length > 0) {
+          setMessages(data);
+        } else {
+          setMessages([WELCOME_MSG]);
+        }
       } catch (error) {
         console.error('Error cargando historial de chat:', error);
+        setMessages([WELCOME_MSG]); // Fallback al mensaje de bienvenida
       }
     };
     fetchMessages();

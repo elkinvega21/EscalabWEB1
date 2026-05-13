@@ -9,6 +9,7 @@ import Footer from '../components/Footer/Footer';
 import Comparison from '../components/Comparison/Comparison';
 import CRMIntegration from '../components/CRMIntegration/CRMIntegration';
 import OnboardingModal from '../components/OnboardingModal/OnboardingModal';
+import FAQ from '../components/FAQ/FAQ';
 
 /**
  * Página principal de Escalab (Landing Page).
@@ -62,6 +63,10 @@ const LandingPage = () => {
       </section>
 
       <TrustedBy />
+
+      <section aria-label="Preguntas Frecuentes">
+        <FAQ />
+      </section>
 
       <section aria-label="Contacto">
         <Contacto />

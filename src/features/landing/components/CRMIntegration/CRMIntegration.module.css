@@ -81,6 +81,15 @@
   margin-bottom: 0;
 }
 
+.activeFeature {
+  background: #fff;
+  padding: 16px;
+  border-radius: 16px;
+  margin: -16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
 .ctaBtn {
   display: inline-flex;
   align-items: center;
@@ -119,7 +128,40 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.windowControls {
+  display: flex;
   gap: 6px;
+}
+
+.mockupTabs {
+  display: flex;
+  gap: 8px;
+}
+
+.mockupTab {
+  background: transparent;
+  border: none;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.mockupTab:hover {
+  background: rgba(0, 0, 0, 0.03);
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.mockupTab.activeTab {
+  background: #fff;
+  color: var(--dark-text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .dot {
@@ -136,12 +178,101 @@
   margin-left: 10px;
 }
 
-.kanban {
+.mockupBody {
   padding: 24px;
+  background-color: #fcfcfc;
+  min-height: 380px;
+}
+
+.statsRow {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.statCard {
+  flex: 1;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.statIcon {
+  width: 32px;
+  height: 32px;
+  background: rgba(168, 230, 61, 0.15);
+  color: #7ec820;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+}
+
+.statInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.statValue {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--dark-text);
+  line-height: 1.1;
+}
+
+.statLabel {
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+.chartMockup {
+  margin-top: 32px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.chartTitle {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.4);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.chartBars {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  height: 80px;
+}
+
+.chartBar {
+  flex: 1;
+  background: linear-gradient(180deg, var(--primary-green) 0%, rgba(168, 230, 61, 0.2) 100%);
+  border-radius: 4px 4px 0 0;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.chartBar:hover {
+  opacity: 1;
+}
+
+.kanban {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  background-color: #fcfcfc;
 }
 
 .column h5 {
@@ -209,5 +340,44 @@
   .grid {
     grid-template-columns: 1fr;
     gap: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .crmSection {
+    padding: 80px 20px;
+  }
+  
+  .statsRow {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .kanban {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .mockupTabs {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+  
+  .mockupTab {
+    white-space: nowrap;
+  }
+  
+  .mockupBody {
+    padding: 16px;
+    min-height: auto;
+  }
+  
+  .chartMockup {
+    padding: 12px;
+  }
+  
+  .floatingLogos {
+    display: none; /* Ocultar iconos flotantes en móvil para evitar scroll horizontal extra */
   }
 }

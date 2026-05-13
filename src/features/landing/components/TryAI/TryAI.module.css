@@ -82,6 +82,9 @@
   flex: 1;
   overflow-y: auto;
   background-color: transparent;
+  overscroll-behavior: contain; /* Evita que la página haga scroll al llegar al límite del chat */
+  -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+  scroll-behavior: smooth;
 }
 
 /* Custom Scrollbar for Chat */

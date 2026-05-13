@@ -224,6 +224,7 @@
   }
 
   .voiceFeature {
+    grid-column: span 1;
     padding: 40px 24px;
   }
 

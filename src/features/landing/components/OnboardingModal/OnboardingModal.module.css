@@ -18,6 +18,9 @@
   width: 95%;
   max-width: 550px;
   min-height: 450px;
+  max-height: 90vh; /* Para que siempre quepa en pantalla y permita scroll interno */
+  overflow-y: auto; /* Permite hacer scroll si el contenido es muy largo */
+  -webkit-overflow-scrolling: touch;
   border-radius: 32px;
   padding: 40px 50px;
   position: relative;
@@ -38,8 +41,9 @@
     width: 100%;
     height: 100%;
     max-width: 100% !important;
+    max-height: 100dvh; /* dvh maneja la barra del navegador de safari/chrome móvil */
     border-radius: 0;
-    padding: 30px 20px;
+    padding: 30px 20px 80px 20px; /* Padding extra abajo para asegurar que el botón final se vea */
     min-height: 100vh;
   }
   

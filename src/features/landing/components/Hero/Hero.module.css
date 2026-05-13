@@ -58,6 +58,18 @@
   display: block;
 }
 
+.cursor {
+  font-weight: 100;
+  color: var(--primary-green);
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 /* Subtítulo — DM Sans, legible, no compite con el H1 */
 .heroSubtitle {
   font-family: var(--font-body);
@@ -131,8 +143,7 @@
   }
 
   .heroSubtitle {
-    font-size: 14px;
-    max-width: 100%;
+    display: none;
   }
 }
 
