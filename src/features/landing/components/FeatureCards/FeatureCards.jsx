@@ -3,26 +3,29 @@ import { ArrowUpRight, RotateCcw } from 'lucide-react';
 import styles from './FeatureCards.module.css';
 
 /**
- * Componente individual de tarjeta con rotación.
+ * Tarjeta con efecto flip al hacer clic.
  */
 const FlipCard = ({ children, backContent, className }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
-    <div 
+    <div
       className={`${styles.flipCardContainer} ${className} ${isFlipped ? styles.isFlipped : ''}`}
       onClick={() => setIsFlipped(!isFlipped)}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => e.key === 'Enter' && setIsFlipped(!isFlipped)}
     >
       <div className={styles.flipCardInner}>
-        {/* Lado Frontal */}
+        {/* Frente */}
         <div className={styles.flipCardFront}>
           {children}
         </div>
 
-        {/* Lado Trasero */}
+        {/* Reverso */}
         <div className={styles.flipCardBack}>
           <div className={styles.backHeader}>
-            <RotateCcw size={14} className={styles.rotateIcon} />
+            <RotateCcw size={12} className={styles.rotateIcon} />
             <span>SABER MÁS</span>
           </div>
           <div className={styles.backContent}>
@@ -35,13 +38,14 @@ const FlipCard = ({ children, backContent, className }) => {
 };
 
 /**
- * Componente FeatureCards estático.
+ * Sección de Feature Cards — 3 tarjetas interactivas.
  */
 const FeatureCards = () => {
   return (
     <section className={styles.featuresSection} id="casos">
+
       {/* Tarjeta 1 — IA */}
-      <FlipCard 
+      <FlipCard
         className={styles.lightCard}
         backContent={
           <>
@@ -57,31 +61,22 @@ const FeatureCards = () => {
       >
         <div className={styles.cardHeader}>
           <span className={styles.label}>LA IA</span>
-          <div className={styles.iconBtn} aria-label="Girar">
-            <ArrowUpRight size={16} />
-          </div>
+          <h2>La IA aprende tu negocio.</h2>
+          <p className={styles.cardBody}>
+            Sube tu información una vez. Ella califica y filtra. Tú solo cierras la venta.
+          </p>
         </div>
-        <h2>La IA aprende tu negocio.</h2>
-        <p className={styles.cardBody}>
-          Sube tu información una vez. Ella califica y filtra. Tú solo cierras la venta.
-        </p>
-        <div className={styles.cardImageWrapper}>
-          <img
-            src="/friends-sitting-indoors-front-view.webp"
-            alt="IA"
-            className={styles.cardImage}
-            loading="lazy"
-          />
+        <div className={styles.iconBtn} aria-label="Girar tarjeta">
+          <ArrowUpRight size={16} />
         </div>
       </FlipCard>
 
-      {/* Tarjeta 2 — UNAC */}
-      <FlipCard 
+      {/* Tarjeta 2 — UNAC (verde) */}
+      <FlipCard
         className={styles.greenCard}
         backContent={
           <div className={styles.backContentDark}>
             <h3>Impacto UNAC</h3>
-            <p>Aumento masivo en conversiones y reducción de tiempos de respuesta.</p>
             <div className={styles.statGrid}>
               <div className={styles.statItem}>
                 <span className={styles.statValue}>+40%</span>
@@ -95,30 +90,20 @@ const FeatureCards = () => {
           </div>
         }
       >
-        <div className={styles.greenCardPadding}>
-          <div className={styles.cardHeader}>
-            <span className={styles.label}>CASO DE ÉXITO</span>
-            <div className={`${styles.iconBtn}`} aria-label="Girar">
-              <ArrowUpRight size={16} />
-            </div>
-          </div>
+        <div className={styles.cardHeader}>
+          <span className={styles.label}>CASO DE ÉXITO</span>
           <h2>UNAC ya lo usa.</h2>
           <p className={styles.cardBody}>
             Resultados reales en tiempo récord. Automatización que genera confianza.
           </p>
         </div>
-        <div className={styles.cardImageWrapper}>
-          <img
-            src="/happy-woman-sitting-sofa-looking-her-boyfriend.webp"
-            alt="Caso UNAC"
-            className={styles.cardImage}
-            loading="lazy"
-          />
+        <div className={styles.iconBtn} aria-label="Girar tarjeta">
+          <ArrowUpRight size={16} />
         </div>
       </FlipCard>
 
       {/* Tarjeta 3 — Plataforma */}
-      <FlipCard 
+      <FlipCard
         className={styles.lightCard}
         backContent={
           <>
@@ -134,29 +119,18 @@ const FeatureCards = () => {
       >
         <div className={styles.cardHeader}>
           <span className={styles.label}>PLATAFORMA</span>
-          <div className={styles.iconBtn} aria-label="Girar">
-            <ArrowUpRight size={16} />
-          </div>
+          <h2>Un solo lugar.</h2>
+          <p className={styles.cardBody}>
+            Leads. CRM. Automatizaciones. Todo conectado en una sola interfaz.
+          </p>
         </div>
-        <h2>Un solo lugar.</h2>
-        <p className={styles.cardBody}>
-          Leads. CRM. Automatizaciones. Todo conectado en una sola interfaz.
-        </p>
-        <div className={styles.cardImageWrapper}>
-          <img
-            src="/hand-holding-megaphone-marketing-announcement-campaign.webp"
-            alt="Plataforma"
-            className={styles.cardImage}
-            loading="lazy"
-          />
+        <div className={styles.iconBtn} aria-label="Girar tarjeta">
+          <ArrowUpRight size={16} />
         </div>
       </FlipCard>
+
     </section>
   );
 };
 
 export default FeatureCards;
-
-
-
-
