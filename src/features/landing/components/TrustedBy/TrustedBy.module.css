@@ -45,60 +45,27 @@
 .brandItem {
   display: flex;
   align-items: center;
-  justify-content: center;
-<<<<<<< HEAD:src/features/landing/components/TrustedBy/TrustedBy.module.css
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-  padding: 16px 32px;
-  border-radius: 100px;
-  transition: all 0.3s ease;
-}
-
-.brandItem:hover {
-  background: #ffffff;
-  border-color: rgba(168, 230, 61, 0.4);
-  box-shadow: 0 8px 25px rgba(168, 230, 61, 0.15);
-  transform: translateY(-2px);
-=======
-  padding: 10px 20px;
+    padding: 10px 20px;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .brandItem:hover {
   transform: scale(1.08);
->>>>>>> 267bcd1 (feat: implement marketing/legal infrastructure and refactor pg connection to pool):frontend/src/features/landing/components/TrustedBy/TrustedBy.module.css
 }
 
 .brandText {
   font-family: var(--font-heading);
-<<<<<<< HEAD:src/features/landing/components/TrustedBy/TrustedBy.module.css
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: var(--dark-text);
-  opacity: 0.5;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  transition: opacity 0.3s ease, color 0.3s ease;
-=======
   font-size: 2rem;
   font-weight: 900;
   color: #a0aab5; /* Gris corporativo */
   text-transform: uppercase;
   letter-spacing: -0.04em; /* Kerning ajustado para estilo logo moderno */
   transition: color 0.3s ease;
->>>>>>> 267bcd1 (feat: implement marketing/legal infrastructure and refactor pg connection to pool):frontend/src/features/landing/components/TrustedBy/TrustedBy.module.css
   white-space: nowrap;
   cursor: default;
 }
 
 .brandItem:hover .brandText {
-<<<<<<< HEAD:src/features/landing/components/TrustedBy/TrustedBy.module.css
-  opacity: 1;
-=======
->>>>>>> 267bcd1 (feat: implement marketing/legal infrastructure and refactor pg connection to pool):frontend/src/features/landing/components/TrustedBy/TrustedBy.module.css
   color: #000;
 }
 
