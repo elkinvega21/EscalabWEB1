@@ -3,6 +3,16 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  height: 80px;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 20px;
+    height: 70px;
+  }
 }
 
 /* Logotipo */
@@ -16,6 +26,14 @@
   letter-spacing: -0.02em;
   color: var(--light-text);
   text-decoration: none;
+}
+
+.themeLight {
+  /* Base class para el tema claro */
+}
+
+.themeLight .logo {
+  color: #000;
 }
 
 .logoMark {
@@ -51,6 +69,10 @@
   text-decoration: none;
 }
 
+.themeLight .navLinks li a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
 .navLinks li a:hover {
   background-color: var(--primary-green);
   color: var(--dark-text);
@@ -62,20 +84,51 @@
 .navActions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 }
 
-.navCta {
-  background-color: var(--primary-green);
-  color: var(--dark-text);
-  border: none;
-  padding: 8px 18px;
-  border-radius: 100px;
+.navSecondaryCta {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 100px;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  line-height: 1;
+}
+
+.themeLight .navSecondaryCta {
+  color: #000;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.navSecondaryCta:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.themeLight .navSecondaryCta:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.4);
+}
+
+.navCta {
+  display: inline-block;
+  background-color: var(--primary-green);
+  color: var(--dark-text);
+  border: none;
+  padding: 11px 24px; /* Slightly more vertical padding to account for the border on secondary CTA */
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
+  line-height: 1;
 }
 
 .navCta:hover {
@@ -91,6 +144,10 @@
   cursor: pointer;
   padding: 4px;
   z-index: 1001;
+}
+
+.themeLight .menuToggle {
+  color: #000;
 }
 
 /* Menú móvil overlay */
@@ -127,6 +184,18 @@
   font-weight: var(--fw-bold);
   color: #fff;
   text-decoration: none;
+}
+
+.mobileSecondaryCta {
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 12px 32px;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: inline-block;
 }
 
 .mobileCta {

@@ -80,8 +80,15 @@ const OnboardingModal = ({ isOpen, onClose, skipContactInfo = false, initialLead
         body: JSON.stringify(payload)
       });
       if (response.ok) {
+        // Disparar evento de conversión para Meta/Google Ads
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'generate_lead' });
+
         setStep(6); // Success step
-        setTimeout(() => onClose(), 4000); // Auto close
+        // Redirigir a Calendly después de 2.5 segundos
+        setTimeout(() => {
+          window.location.href = 'https://calendly.com/escalab/demo';
+        }, 2500);
       }
     } catch (err) {
       console.error(err);
@@ -272,8 +279,8 @@ const OnboardingModal = ({ isOpen, onClose, skipContactInfo = false, initialLead
         {step === 6 && (
           <div className={styles.successContainer}>
             <div className={styles.checkmark}>✓</div>
-            <h3>¡Análisis completado!</h3>
-            <p>He guardado tu estrategia. Un especialista de Escalab revisará tu caso de {category} y te contactará en breve.</p>
+            <h3>¡Estrategia guardada!</h3>
+            <p>Redirigiendo a nuestro calendario para que reserves tu sesión de diseño técnico de inmediato...</p>
           </div>
         )}
       </div>

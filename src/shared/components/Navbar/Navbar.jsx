@@ -7,7 +7,7 @@ import styles from './Navbar.module.css';
  * 
  * @returns {JSX.Element}
  */
-const Navbar = ({ onOpenOnboarding }) => {
+const Navbar = ({ onOpenOnboarding, theme = 'dark' }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -19,7 +19,7 @@ const Navbar = ({ onOpenOnboarding }) => {
   };
 
   return (
-    <nav className={styles.navbar} role="navigation" aria-label="Navegación principal">
+    <nav className={`${styles.navbar} ${theme === 'light' ? styles.themeLight : ''}`} role="navigation" aria-label="Navegación principal">
       {/* Logotipo */}
       <a href="/" className={styles.logo} aria-label="Escalab — Inicio">
         <div className={styles.logoMark} aria-hidden="true">E</div>
@@ -35,6 +35,14 @@ const Navbar = ({ onOpenOnboarding }) => {
 
       {/* CTA principal - Desktop */}
       <div className={styles.navActions}>
+        <a 
+          href="https://calendly.com/escalab/demo" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className={styles.navSecondaryCta}
+        >
+          Agendar Demo
+        </a>
         <button 
           id="nav-cta"
           className={styles.navCta}
@@ -59,6 +67,16 @@ const Navbar = ({ onOpenOnboarding }) => {
           <li><a href="#plataforma" onClick={handleLinkClick}>Plataforma</a></li>
           <li><a href="#casos" onClick={handleLinkClick}>Casos</a></li>
           <li><a href="#nosotros" onClick={handleLinkClick}>Nosotros</a></li>
+          <li>
+            <a 
+              href="https://calendly.com/escalab/demo" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={styles.mobileSecondaryCta}
+            >
+              Agendar Demo
+            </a>
+          </li>
           <li>
             <button 
               className={styles.mobileCta}

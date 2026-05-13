@@ -1,14 +1,17 @@
-/* Footer ultra-minimalista */
+/* Footer minimalista */
 .footer {
   background-color: #000;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   padding: 32px 48px;
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-/* Logo en el footer */
 .footerLogo {
   font-family: var(--font-heading);
   font-size: 1.1rem;
@@ -26,14 +29,46 @@
   text-transform: uppercase;
 }
 
+/* Links Legales */
+.legalLinks {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.legalLink {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.legalLink:hover {
+  color: var(--primary-green);
+}
+
+.separator {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 13px;
+}
+
 /* =========================================
    Responsive
    ========================================= */
-@media (max-width: 640px) {
-  .footer {
+@media (max-width: 768px) {
+  .footerContent {
     flex-direction: column;
-    gap: 12px;
-    padding: 24px;
+    gap: 20px;
     text-align: center;
+  }
+  
+  .legalLinks {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .separator {
+    display: none;
   }
 }

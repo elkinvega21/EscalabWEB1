@@ -1,20 +1,28 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
 
 /**
  * Componente Footer.
  *
- * Footer ultra-minimalista de Escalab.
- * Solo el nombre de la marca y la ubicación/año.
- * Filosofía: las marcas tech premium no necesitan más.
+ * Footer minimalista de Escalab con enlaces legales.
  *
  * @returns {JSX.Element}
  */
 const Footer = () => {
   return (
     <footer className={styles.footer} role="contentinfo">
-      <span className={styles.footerLogo}>Escalab</span>
-      <span className={styles.footerMeta}>Medellín · 2025</span>
+      <div className={styles.footerContent}>
+        <span className={styles.footerLogo}>Escalab</span>
+        
+        <div className={styles.legalLinks}>
+          <Link to="/privacidad" className={styles.legalLink}>Política de Privacidad</Link>
+          <span className={styles.separator}>·</span>
+          <Link to="/terminos" className={styles.legalLink}>Términos y Condiciones</Link>
+        </div>
+
+        <span className={styles.footerMeta}>Medellín · 2025</span>
+      </div>
     </footer>
   );
 };
