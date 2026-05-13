@@ -36,7 +36,7 @@ const Navbar = ({ onOpenOnboarding, theme = 'dark' }) => {
       {/* CTA principal - Desktop */}
       <div className={styles.navActions}>
         <a 
-          href="https://calendly.com/escalab/demo" 
+          href="https://calendly.com/elkindario2121" 
           target="_blank" 
           rel="noopener noreferrer"
           className={styles.navSecondaryCta}
@@ -69,7 +69,7 @@ const Navbar = ({ onOpenOnboarding, theme = 'dark' }) => {
           <li><a href="#nosotros" onClick={handleLinkClick}>Nosotros</a></li>
           <li>
             <a 
-              href="https://calendly.com/escalab/demo" 
+              href="https://calendly.com/elkindario2121" 
               target="_blank" 
               rel="noopener noreferrer"
               className={styles.mobileSecondaryCta}
