@@ -1,0 +1,266 @@
+/* ==========================================
+   Feature Cards — Premium Redesign
+   ========================================== */
+.featuresSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+/* Flip card container */
+.flipCardContainer {
+  width: 100%;
+  height: 110px;
+  perspective: 1200px;
+  cursor: pointer;
+  position: relative;
+}
+
+.flipCardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.isFlipped .flipCardInner {
+  transform: rotateX(180deg);
+}
+
+/* ---- Shared front/back styles ---- */
+.flipCardFront,
+.flipCardBack {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* ---- FRONT: light card ---- */
+.flipCardFront {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* ---- FRONT: green card ---- */
+.greenCard .flipCardFront {
+  background: linear-gradient(135deg, #a8e63d 0%, #7ec820 100%);
+  border-color: transparent;
+  box-shadow: 0 4px 20px rgba(126, 200, 32, 0.35);
+}
+
+/* ---- BACK ---- */
+.flipCardBack {
+  transform: rotateX(180deg);
+  background: #0f1117;
+  color: #fff;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* =========================================
+   CARD HEADER (label + icon row)
+   ========================================= */
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+
+.label {
+  font-size: 9px;
+  font-weight: 800;
+  color: #7ec820;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  line-height: 1;
+}
+
+.greenCard .label {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.flipCardFront h2 {
+  font-size: 15px;
+  font-weight: 800;
+  margin: 0;
+  color: #0f1117;
+  line-height: 1.15;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.greenCard .flipCardFront h2 {
+  color: #0f1117;
+}
+
+.cardBody {
+  font-size: 11px;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.45);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.greenCard .cardBody {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+/* =========================================
+   ICON BUTTON
+   ========================================= */
+.iconBtn {
+  width: 36px;
+  height: 36px;
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f1117;
+  flex-shrink: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.flipCardContainer:hover .iconBtn {
+  background: rgba(0, 0, 0, 0.12);
+  transform: rotate(45deg);
+}
+
+.greenCard .iconBtn {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================
+   BACK CONTENT
+   ========================================= */
+.backHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  position: absolute;
+  top: 12px;
+  left: 20px;
+}
+
+.rotateIcon {
+  opacity: 0.5;
+}
+
+.backContent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 4px;
+}
+
+.backContent h3 {
+  font-size: 14px;
+  font-weight: 800;
+  color: #a8e63d;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.backContent p {
+  font-size: 10.5px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  max-width: 160px;
+  display: block !important;
+}
+
+.backList {
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.backList li {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+
+/* Stats grid */
+.statGrid {
+  display: flex;
+  gap: 28px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statValue {
+  font-size: 24px;
+  font-weight: 900;
+  color: #a8e63d;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 4px;
+}
+
+/* green card back */
+.backContentDark {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.backContentDark h3 {
+  font-size: 14px;
+  font-weight: 800;
+  color: #a8e63d;
+  margin: 0;
+}
+
+/* Hide unused image wrappers */
+.cardImageWrapper,
+.cardImage,
+.greenCardPadding {
+  display: none !important;
+}
